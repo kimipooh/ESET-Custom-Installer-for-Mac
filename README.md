@@ -5,6 +5,9 @@ The apple script supports the GUI installation of ESET Custom Installer for Mac
 
 # Construction in DMG file
 
+ESET-Custom-Installer.dmg.zip is a full set of this installer packages.
+It consist of the following files.
+
 - ESET_Setup.app: Installer (Apple Script)
 - README.rtf: Handling manual (Template)
 - .background: Background image folder (Hidden Folder)
