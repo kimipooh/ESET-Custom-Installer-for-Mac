@@ -30,7 +30,7 @@ Because the converted DMG file is mounted as read-only file system.
 2. Click on "Convert" button in the menu bar and select the DMG file.
 3. Confirm to enable "compress" option, save as it.
 
-# Prepalation
+# Preparation
 
 There are some hidden folders, so you had better change the setting of the hidden folder/file visualization.
 
