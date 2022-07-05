@@ -3,6 +3,13 @@ ESET-Custom-Installer-for-Mac
 
 This is the framework for supporting the ESET preconfigured custom installer package for Mac.
 
+The current version is ESET Endpoint Antivirus 7.1.
+
+ESET Endpoint Antivirus 7.x consists two installers, such as "ESET Management Agent" and "ESET Endpoint Antivirus".
+The tool helps to 
+
+ESET-Antivirus7-MacOSX
+
 # Construction in DMG file
 
 ESET-Custom-Installer.dmg.zip is a full set of this installer packages.
@@ -11,16 +18,21 @@ It consist of the following files.
 - ESET_Setup.app: Installer (Apple Script)
 - README.rtf: Handling manual (Template)
 - .background: Background image folder (Hidden Folder)
-- .packages: Standalone ESET Custom Installer files (esets_remote_install.pkg, esets_remote_uninstall.sh, esets_setup.sh)
-* Three files are dummy because they are created by ESET remote installer.
+- .packages: Standalone ESET Custom Installer files (installer.pkg, PROTECTAgentInstaller.sh)
+* Two files are dummy because they are created by ESET remote installer.
 
 ## Attribution of DMG file
 
 For automatically opening the mounted volume when the DMG file is opened, the following command was done.
 
-1. Mount DMG file (for example, mounted volume name is "/Volumes/ESET-Custom-Installer").
-1. Open "Terminal" application 
-2. Type "bless /Volumes/ESET-Custom-Installer --openfolder /Volumes/ESET-Custom-Installer" and push "Enter" key.
+1. Mount DMG file (for example, mounted volume name is "/Volumes/ESET-Antivirus7-MacOSX").
+2. Open "Terminal" application 
+3. Type "bless /Volumes/ESET-Antivirus7-MacOSX --openfolder /Volumes/ESET-Antivirus7-MacOSX" and push "Enter" key.
+
+Or 
+
+Converted read-only volume.
+hdiutil convert -format UDZO -o ESET-Custom-Installer-converted.dmg  ESET-Custom-Installer.dmg
 
 ## Before provide the DMG file.
 You had better convert it to the DMG file with compression 
@@ -48,12 +60,12 @@ There are some hidden folders, so you had better change the setting of the hidde
 
 # Explanation
 
-## ESET_Setup.app
+## ESET7_Setup.app
 It's very simple apple script.
 It carries out the following behavior.
 
-1. Copy "esets_remote_install.pkg" and "esets_setup.sh" to "/tmp/" folder with administrator permission.
-2. Carry out "esets_remote_install.pkg" including the custom setting (esets_setup.sh) with administrator permission 
+1. Copy "installer.pkg" and "PROTECTAgentInstaller.sh" to "/tmp/" folder with administrator permission.
+2. Carry out "installer.pkg" including the custom setting (PROTECTAgentInstaller.sh) with administrator permission 
 
 If you'd like to change the mounted name of DMG file (default: ESET-Custom-Installer), you open "ESET_Setup.app" using Apple Script Editor (Search "Apple Script" on Spotlight) and edit the name of "ESET-Custom-Installer".
 
@@ -70,8 +82,8 @@ This is the manual for explaining it.
 
 This is the hidden folder, so if you access it, there are three approaches.
 
-- 1) Push "Command+Shift+G" and Input the full path (/Voulmes/ESET-Custom-Installer/.background) in the dialog box.
-- 2) Open "Terminal" application, Type "open /Voulmes/ESET-Custom-Installer/.background" and push "Enter" key..
+- 1) Push "Command+Shift+G" and Input the full path (/Voulmes/ESET-Antivirus7-MacOSX/.background) in the dialog box.
+- 2) Open "Terminal" application, Type "open /Voulmes/ESET-Antivirus7-MacOSX/.background" and push "Enter" key..
 - 3) If you enable to display the hidden files/folders, right click ".background" folder and select "Open" menu.
 
 If you would like to change the background image, please carry out the following operation.
@@ -87,9 +99,9 @@ Reference: [How To: Create DMG Art for Fancy Application Installations](http://m
 
 ### How to create ".background" hidden folder.
 
-1. Create ".background" folder in "/Voulmes/ESET-Custom-Installer/".
+1. Create ".background" folder in "/Voulmes/ESET-Antivirus7-MacOSX/".
 2. Open "Terminal" application.
-3. Type "SetFile -a V "/Voulmes/ESET-Custom-Installer/.background" and push "Enter" key.
+3. Type "SetFile -a V "/Voulmes/ESET-Antivirus7-MacOSX/.background" and push "Enter" key.
 * This is to add the hidden attribution to the folder.
 
 ## .packages
