@@ -25,14 +25,15 @@ It consist of the following files.
 
 For automatically opening the mounted volume when the DMG file is opened, the following command was done.
 
+Converted read-only volume.
+hdiutil convert -format UDZO -o ESET-Custom-Installer-converted.dmg  ESET-Custom-Installer.dmg
+
+Or 
+
 1. Mount DMG file (for example, mounted volume name is "/Volumes/ESET-Antivirus7-MacOSX").
 2. Open "Terminal" application 
 3. Type "bless /Volumes/ESET-Antivirus7-MacOSX --openfolder /Volumes/ESET-Antivirus7-MacOSX" and push "Enter" key.
 
-Or 
-
-Converted read-only volume.
-hdiutil convert -format UDZO -o ESET-Custom-Installer-converted.dmg  ESET-Custom-Installer.dmg
 
 ## Before provide the DMG file.
 You had better convert it to the DMG file with compression 
@@ -60,12 +61,13 @@ There are some hidden folders, so you had better change the setting of the hidde
 
 # Explanation
 
-## ESET7_Setup.app
+## ESET7_SETUP.app
 It's very simple apple script.
 It carries out the following behavior.
-
+ 
 1. Copy "installer.pkg" and "PROTECTAgentInstaller.sh" to "/tmp/" folder with administrator permission.
-2. Carry out "installer.pkg" including the custom setting (PROTECTAgentInstaller.sh) with administrator permission 
+2. Sirent install "Rosseta2" for PROTECT Agent(ERAAgent).
+3. Carry out "installer.pkg" including the custom setting (PROTECTAgentInstaller.sh) with administrator permission 
 
 If you'd like to change the mounted name of DMG file (default: ESET-Custom-Installer), you open "ESET_Setup.app" using Apple Script Editor (Search "Apple Script" on Spotlight) and edit the name of "ESET-Custom-Installer".
 
